@@ -1,4 +1,4 @@
-🎯 Quizania – Play, Compete & Earn with Quizzes
+🎯 Quizania – Play, Compete & fun with Quizzes
 
 Quizania is an interactive and fun quiz platform where users can play quizzes, compete with others, challenge bots, and earn rewards.
 It is designed to make learning engaging while adding a competitive and rewarding experience.
