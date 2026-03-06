@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recharge - Quizania</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 0.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+      body { font-family: 'Poppins', sans-serif; }
+    .sidebar a { display: flex; align-items: center; gap: 0.5rem; }
+    .overlay { background: rgba(0, 0, 0, 0.5); }
+    @media (max-width: 768px) {
+      .sidebar { width: 70%; max-width: 280px; height: 100vh; position: fixed; top: 0; left: -100%; z-index: 40; transition: all 0.3s ease; }
+      .sidebar.open { left: 0; }
+      .mobile-overlay { display: none; }
+      .mobile-overlay.show { display: block; position: fixed; inset: 0; z-index: 30; }
+    }
+	html body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+    .preset-btn {
+      background-color: #e6f0ff;
+      padding: 10px 0;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      font-size: 16px;
+      color: #0070f3;
+      transition: 0.2s;
+    }
+    .preset-btn:hover {
+      background-color: #cce0ff;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+
+
+
+<!-- Mobile Navbar -->
+<div class="sm:hidden flex justify-between items-center p-4 bg-blue-900 text-white">
+  <button onclick="toggleSidebar()">☰</button>
+  <h1 class="font-bold">Quizania</h1>
+</div>
+
+<!-- Sidebar Overlay for Mobile -->
+<div id="mobileOverlay" class="mobile-overlay overlay"></div>
+
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar bg-blue-900 text-white flex flex-col px-4 py-4 sm:relative sm:w-60 w-full sm:translate-x-0">
+    <div class="flex items-center mb-6 space-x-2">
+      <img id="profilePreview" src="" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white cursor-pointer" />
+      <span class="text-lg font-bold hidden sm:block">Quizania</span>
+      <input type="file" id="profilePhoto" accept="image/*" class="hidden" />
+    </div>
+    <nav class="space-y-2">
+      <a href="dashboard.html">🏠 Home</a>
+      <a href="profile-edit.html">👤 Profile</a>
+      <a href="msg.html">✉️ Messages</a>
+      <a href="play.html">▶️ Play</a>
+      <a href="refferearn">🤝 Refer & Earn</a>
+      <a href="settingtrial">⚙️ Setting</a>
+      <a href="feedbacks">📝 Feedback</a>
+    </nav>
+    <button onclick="toggleTheme()" class="mt-4 bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">Dark</button>
+    <button onclick="logout()" class="mt-2 bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-sm">Logout</button>
+  </div>
+
+
+  <main class="flex-1 p-4 animate-fadeIn">
+
+
+  <div class="max-w-md mx-auto mt-10 p-6 shadow-lg rounded-lg border bg-white dark:bg-gray-800">
+  <div class="bg-blue-500 text-white text-center py-4 text-xl font-semibold">
+    Recharge wallet
+  </div>
+
+<br></br>
+    <!-- Recharge Wallet Balance -->
+    <div class="text-center text-lg mb-4"><h2>
+      Balance: ₹<span id="recharge-wallet">0</span></h2>
+    </div>
+
+    <!-- Input Amount -->
+    <div class="mb-4">
+      <input id="amountInput" type="number" min="10" max="100000" placeholder="Enter amount"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg text-center text-xl outline-none"/>
+    </div>
+
+    <!-- Quick Buttons -->
+    <div class="grid grid-cols-3 gap-3 mb-6">
+      <button class="preset-btn">₹100</button>
+      <button class="preset-btn">₹250</button>
+      <button class="preset-btn">₹500</button>
+      <button class="preset-btn">₹1000</button>
+      <button class="preset-btn">₹2000</button>
+      <button class="preset-btn">₹5000</button>
+    </div>
+
+    <!-- Recharge Button -->
+    <button onclick="startRecharge()"
+      class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">
+      Recharge Now
+    </button>
+
+    <!-- Fee Info -->
+	    <div class="mt-6 text-sm text-gray-600">
+      <h3 class="font-semibold mb-1">Recharge Rules:</h3>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Minimum Recharge amount is ₹10.</li>
+        <li>Maximum Recharge per transaction is ₹1,00,000.</li>
+        <li>₹10 - ₹500: 2% transaction fee</li>
+        <li>Above ₹500: No transaction fees It is free</li>
+        <li>Only verified users can Recharge</li>
+        <li>Amount will be added to your Recharge Wallet after successful payment.</li>
+      </ul>
+    </div>
+  </div>
+  
+  </main>
+
+  </div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  function translatePage(code) {
+    const dropdown = document.querySelector("#google_translate_element select");
+    if (!dropdown) return;
+    dropdown.value = code;
+    dropdown.dispatchEvent(new Event("change"));
+  }
+
+  window.addEventListener("load", () => {
+    const savedLang = localStorage.getItem("quizania_lang");
+    if (savedLang) {
+      const waitForDropdown = setInterval(() => {
+        const sel = document.querySelector("#google_translate_element select");
+        if (sel) {
+          clearInterval(waitForDropdown);
+          translatePage(savedLang);
+        }
+      }, 500);
+    }
+  });
+</script>
+ 
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBt_ygYw6AgCcOlQYcMAn3rw6Q325IRyy4",
+      authDomain: "quizania-b8292.firebaseapp.com",
+      projectId: "quizania-b8292",
+      storageBucket: "quizania-b8292.appspot.com",
+      messagingSenderId: "94747680142",
+      appId: "1:94747680142:web:520ef8559cfe766f0c58df",
+      measurementId: "G-YM2LZBJNCY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    // Load user recharge wallet
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const userRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          document.getElementById("recharge-wallet").innerText = data.rechargeWallet || 0;
+        }
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Set amount from quick buttons
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('amountInput').value = btn.innerText.replace('₹', '');
+      });
+    });
+
+    // Recharge logic
+    window.startRecharge = function () {
+      const amount = parseInt(document.getElementById("amountInput").value);
+      if (isNaN(amount) || amount < 10 || amount > 100000) {
+        alert("Please enter a valid amount between ₹10 and ₹1,00,000.");
+        return;
+      }
+
+      const fee = amount <= 500 ? (amount * 0.02).toFixed(2) : 0;
+      const total = (parseFloat(amount) + parseFloat(fee)).toFixed(2);
+
+      // Optional: Save intent to Firestore here
+
+      // Redirect to Cashfree payment page
+      window.location.href = `/payment-gateway.html?amount=${total}&original=${amount}`;
+    };
+	
+	window.toggleSidebar = function () {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("mobileOverlay");
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("show");
+  overlay.onclick = () => {
+    sidebar.classList.remove("open");
+    overlay.classList.remove("show");
+  };
+};
+  function toggleTheme() {
+    document.documentElement.classList.toggle("dark");
+  }
+  window.withdraw = function () {
+    alert("Withdraw coming soon!");
+  }
+  window.logout = function () {
+    signOut(auth).then(() => window.location.href = 'login.html');
+  }
+
+  </script>
+</body>
+</html>
