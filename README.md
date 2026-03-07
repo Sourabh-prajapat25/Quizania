@@ -1,18 +1,20 @@
-🎯 Quizania – Play, Compete & fun with Quizzes
+# 🎯 Quizania – Play, Compete & Have Fun with Quizzes
 
-Quizania is an interactive and fun quiz platform where users can play quizzes, compete with others, challenge bots, and earn rewards.
-It is designed to make learning engaging while adding a competitive and rewarding experience.
+**Quizania** is an interactive and entertaining quiz platform where users can play quizzes, compete with others, challenge bots, and enjoy learning in a fun way.
 
+⚠️ **Important:**
+This platform is created **only for entertainment and learning purposes.**
+There is **no real money involved**. Players only use **virtual coins (in-game currency)** to participate in quiz modes.
 
 ---
 
-🌟 Key Highlights
+# 🌟 Key Highlights
 
-🎮 Multiple quiz modes
+🎮 Multiple quiz game modes
 
-💰 Wallet-based earning system
+🪙 Virtual coin-based play system
 
-⚔️ Player vs Player battles
+⚔️ Player vs Player quiz battles
 
 🤖 Play against AI bots
 
@@ -22,88 +24,73 @@ It is designed to make learning engaging while adding a competitive and rewardin
 
 📱 Mobile & desktop friendly UI
 
+---
 
+# 🧠 Quiz Modes Available
+
+## 🆓 Free Quiz
+
+* Play quizzes without spending coins
+* Improve knowledge & practice
+* Perfect for beginners
+
+## ⚔️ Battle Quiz
+
+* Compete with real players
+* Use **virtual coins** to join battles
+* Winner receives **in-game coins**
+
+## 🤖 VS Bot Quiz
+
+* Play against AI-powered bots
+* No waiting for opponents
+* Different difficulty levels
 
 ---
 
-🧠 Quiz Modes Available
+# 🪙 Coin System
 
-🆓 Free Quiz
+Quizania uses **virtual coins only**.
 
-Play quizzes without spending money
+🪙 Recharge coins inside the platform
 
-Improve knowledge & practice
+🎮 Use coins to enter battle quizzes
 
-Ideal for beginners
+🏆 Win coins by winning quiz matches
 
+🔄 Real-time coin balance updates
 
-⚔️ Battle Quiz
-
-Compete with real players
-
-Entry fee required
-
-Winner earns rewards
-
-
-🤖 VS Bot Quiz
-
-Play against AI-powered bots
-
-No waiting for opponents
-
-Skill-based difficulty
-
-
+⚠️ Coins are **only for gameplay** and **cannot be withdrawn or converted to real money**.
 
 ---
 
-💼 Wallet System
+# 🛠️ Tech Stack
 
-💳 Add money to your wallet
-
-🏆 Earn money by winning quizzes
-
-🔄 Real-time balance updates
-
-💸 Withdraw earnings securely
-
-
-
----
-
-🛠️ Tech Stack
-
-Technology	Usage
-
-Frontend	HTML, CSS, JavaScript / React
-Backend	Node.js / Python (Flask / Express)
-Database	Supabase / MongoDB / MySQL
-Auth	Email / Google Login
-Hosting	Vercel / Render
-API	Quiz & Game Logic APIs
-
-
+| Technology | Usage                              |
+| ---------- | ---------------------------------- |
+| Frontend   | HTML, CSS, JavaScript / React      |
+| Backend    | Node.js / Python (Flask / Express) |
+| Database   | Supabase / MongoDB / MySQL         |
+| Auth       | Email / Google Login               |
+| Hosting    | Vercel / Render                    |
+| API        | Quiz & Game Logic APIs             |
 
 ---
 
-📸 Screenshots
+# 📸 Screenshots
 
-> (Add your actual project screenshots here)
-
-
+*(Add your actual project screenshots here)*
 
 ![Home Page](screenshots/home.png)
 ![Quiz Page](screenshots/quiz.png)
 ![Battle Mode](screenshots/battle.png)
 ![Wallet Page](screenshots/wallet.png)
 
-📌 Create a folder named screenshots/ in your repo and upload images.
-
+📌 Create a folder named **screenshots/** in your repo and upload images.
 
 ---
 
-🚀 Features in Detail
+# 🚀 Features in Detail
 
 ✅ User Registration & Login
 
@@ -115,37 +102,41 @@ API	Quiz & Game Logic APIs
 
 ✅ Live battle matchmaking
 
-✅ Secure wallet transactions
+✅ Coin-based gameplay system
 
 ✅ Responsive UI
 
-
-
-
 ---
 
-⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
 
+```
 git clone https://github.com/Sourabh-prajapat25/Quizania.git
+```
 
-2️⃣ Navigate to Project
+### 2️⃣ Navigate to Project
 
+```
 cd Quizania
+```
 
-3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
 
+```
 npm install
+```
 
-4️⃣ Start the Server
+### 4️⃣ Start the Server
 
+```
 npm start
-
+```
 
 ---
 
-🎯 Future Enhancements
+# 🎯 Future Enhancements
 
 📱 Mobile App (Android / iOS)
 
@@ -157,26 +148,22 @@ npm start
 
 🎁 Daily rewards & streaks
 
-
-
 ---
 
-🤝 Contributing
+# 🤝 Contributing
 
 Contributions are welcome!
-Feel free to fork, improve, and submit pull requests.
-
-
----
-
-📄 License
-
-This project is licensed under the MIT License.
-
+Feel free to fork the repository, improve features, and submit pull requests.
 
 ---
 
-🙌 Acknowledgements
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 🙌 Acknowledgements
 
 Open-source libraries
 
@@ -184,16 +171,13 @@ Quiz content sources
 
 Community feedback
 
-
-
 ---
 
-📬 Contact
+# 📬 Contact
 
-👤 Sourabh Prajapat
+👤 **Sourabh Prajapat**
 🌐 GitHub: https://github.com/Sourabh-prajapat25/
 
-
 ---
 
-⭐ If you like this projuiz
+⭐ If you like this project, please **star the repository** and support the project!
